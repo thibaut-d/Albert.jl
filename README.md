@@ -60,19 +60,23 @@ Some ideas for a rich knowledge graph to extract structured information from sci
 ### Possible
       
 ```     
-_propertyID_ _parent_propertyID_ Object <property> [OtherObject] value type unit
+_propertyID_ _parent_propertyID_ Object <property> [PropertyQualifierObject] [ObjectAsValue] fixed_value [unit]
       
 > SubProperties:
-  _sub_propertyID_ (link to >>> _sub_propertyID_ _propertyID_ <property> [OtherObject] value type unit)
+  _sub_propertyID_
 
 > References:
-  _referenceID_ (link to >>> _referenceID_ [Object] hyperlink)
+  _referenceID_
 ```
       
 ### Ex:
 
 ```
-_1234_ _NULL_ X46Cr13: <contains> [Chromium] 13 float percentage
+_1234_ _NULL_ [X46Cr13] <contains> [Chromium] 13 [percentage]
+> References:
+      _4567_ (>>> [EN10088])
+ 
+ _112213_ _NULL_ [Vaccum Quenched X46Cr13 with cryogenics] <has physical property> [Hardness] 47 [HRC]
 > References:
       _4567_ (>>> [EN10088])
 
