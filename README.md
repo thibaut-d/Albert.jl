@@ -3,6 +3,7 @@ Some ideas for a rich knowledge graph to extract structured information from sci
 
 ## Example of information to structure
 
+"""
 <Names>:
   [AFNOR]: "Z40C13"
   [EU]: "X46Cr13"
@@ -52,11 +53,13 @@ Some ideas for a rich knowledge graph to extract structured information from sci
     
 <described in> [Wikipedia page]: 
     <language> [French]: https://fr.wikipedia.org/wiki/X46Cr13
-    
+"""
+      
 ## Structuration
 
 ### Possible
       
+"""      
 _propertyID_ _parent_propertyID_ Object <property> [OtherObject] value type unit
       
 > SubProperties:
@@ -64,9 +67,11 @@ _propertyID_ _parent_propertyID_ Object <property> [OtherObject] value type unit
 
 > References:
   _referenceID_ (link to >>> _referenceID_ [Object] hyperlink)
- 
-### Ex:
+"""
       
+### Ex:
+
+"""
 _1234_ _NULL_ X46Cr13: <contains> [Chromium] 13 float percentage
 > References:
       _4567_ (>>> [EN10088])
@@ -74,4 +79,4 @@ _1234_ _NULL_ X46Cr13: <contains> [Chromium] 13 float percentage
 _1369_ _NULL_ X46Cr13: <described in> [Wikipedia] https://fr.wikipedia.org/wiki/X46Cr13 URL
 > SubProperties:
       _9911_ (>>> _9911_ _1369_ <use> [French])
-  
+"""  
