@@ -4,18 +4,20 @@ Some ideas for a rich knowledge graph to extract structured information from sci
 ## Example of information to structure
 
 ```
-<Names>:
+[X46Cr13 stainless steel]
+
+<has> [name]:
   [AFNOR]: "Z40C13"
   [EU]: "X46Cr13"
   [EU num]: "1.4034"
   [AISI]: "420C"
 
-<Similar to>:
+<similar to>:
   [420HC]
 
-<Description>: "stainless steel widely used in cuttellery"
+<described by>: "stainless steel widely used in cuttellery"
 
-<Subclass of>: [stainless steel]
+<subclass of>: [stainless steel]
 
 <used by>
   [Cutellery]
@@ -24,15 +26,15 @@ Some ideas for a rich knowledge graph to extract structured information from sci
 <is>
     [Food contact compatible]
   
-<Contains>:
+<contains> [chemical element]:
   [Carbon]:	0.46 %
   [Chromium]:	14 %
   [Manganese]:	0.35 %
   [Silicium]:	0.3 %
   > Reference: [EN10088]
 
-<States>:
-  >>> Vaccum Quenched X46Cr13 with cryogenics:
+<has subclass>:
+  >>> [Vaccum Quenched X46Cr13 with cryogenic]:
     <Process>:
       [Heat]: 1050 °C
       [Vaccum quenching]
@@ -40,19 +42,21 @@ Some ideas for a rich knowledge graph to extract structured information from sci
     [Hardness]: 57 HRC > Reference: http://datasheetURL
     > Reference: [EN10088]
       
-<Produced by>:
+<made by> [manufacturer]:
+  ... 
   
-  
-<Distributed by>:
-  [Eurotechni] <where> [Thiers]
+<can be found at> [distributor]:
+  [Eurotechni]
+    <where> [Thiers]
   ...
   
-<described in> [Datasheet]:
+<described by> [datasheet]:
   http://datasheetURL
   http://datasheetURL
     
-<described in> [Wikipedia page]: 
-    <language> [French]: https://fr.wikipedia.org/wiki/X46Cr13
+<described by> [Wikipedia]:
+  https://fr.wikipedia.org/wiki/X46Cr13  
+    <language> [French]
 ```
       
 ## Structuration
@@ -60,12 +64,12 @@ Some ideas for a rich knowledge graph to extract structured information from sci
 ### Possible
       
 ```     
-_propertyID_ _parent_propertyID_ Subject <property> [PropertyQualifierObject] [Object] fixed_value [unit]
+_propertyID_ _parent_propertyID_ [Subject] <property> [PropertyQualifierObject] [Object] string bool int float [unit]
       
-> SubProperties:
+Joint to > SubProperties:
   _sub_propertyID_
 
-> References:
+Joint to or list > References:
   _referenceID_
 ```
       
@@ -90,5 +94,5 @@ _1369_ _NULL_ X46Cr13: <described in> [Wikipedia] https://fr.wikipedia.org/wiki/
 - property ID is the ID of the triple
 - parent property ID can be a sub graph id
 - The subject is the RDF subject 
-- Together the property name and the property qualifier object from the RDF predicate. This permits to keep a limited amount of properties with a large expressivité, what is often an issue in ontologies.
+- Together the property name and the property qualifier object from the RDF predicate. This permits to keep a limited amount of properties with a wide vocabulary, what is often an issue in ontologies.
 - The object/numerical/etc. value with unit is the RDF object 
