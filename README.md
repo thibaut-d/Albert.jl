@@ -60,7 +60,7 @@ Some ideas for a rich knowledge graph to extract structured information from sci
 ### Possible
       
 ```     
-_propertyID_ _parent_propertyID_ Object <property> [PropertyQualifierObject] [ObjectAsValue] fixed_value [unit]
+_propertyID_ _parent_propertyID_ Subject <property> [PropertyQualifierObject] [Object] fixed_value [unit]
       
 > SubProperties:
   _sub_propertyID_
@@ -84,3 +84,11 @@ _1369_ _NULL_ X46Cr13: <described in> [Wikipedia] https://fr.wikipedia.org/wiki/
 > SubProperties:
       _9911_ (>>> _9911_ _1369_ <use> [French])
 ```  
+
+### compatibility with semantic web RDF
+
+- property ID is the ID of the triple
+- parent property ID can be a sub graph id
+- The subject is the RDF subject 
+- Together the property name and the property qualifier object from the RDF predicate. This permits to keep a limited amount of properties with a large expressivité, what is often an issue in ontologies.
+- The object/numerical/etc. value with unit is the RDF object 
